@@ -79,6 +79,8 @@ random number generator. As you can see, the actions are just randomly
 placed in the environment and don't enable efficient exploration.
 
 ![](img/random.gif)
+
+Here is a visualization of how much space was explored.
 ![](img/random.png)
 
 ### Greedy Explorer
@@ -88,13 +90,15 @@ number of unknown voxels within the view. As you can see, the actions
 greedily maximize exploration performance.
 
 ![](img/greedy.gif)
+
+Here is a visualization of how much space was explored.
 ![](img/greedy.png)
 
 ### Student Explorer
-You are free to write the `evaluate_view_reward and
-`get_next_sensing_action` in whatever way you see fit. To get full
-credit on the assignment, you must outperform both the random and
-greedy exploration solutions.
+You are free to write the `evaluate_view_reward` and
+`get_next_sensing_action` functions in whatever way you see fit. To
+get full credit on the assignment, you must outperform both the random
+and greedy exploration solutions.
 
 ## 2. Grading with AutoLab
 To have your solutions graded, you will need to tar the `quadrotor_simulator_py`
