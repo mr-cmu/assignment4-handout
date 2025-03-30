@@ -6,7 +6,9 @@ import open3d as o3d
 import yaml
 from tqdm import tqdm
 
-sys.path.append('../')
+import os
+qs_path = os.path.dirname(os.path.abspath(__file__))+'/..'
+sys.path.append(qs_path)
 
 from quadrotor_simulator_py.map_tools import *
 from quadrotor_simulator_py.sensor_simulator import *
@@ -90,7 +92,7 @@ def test_exploration(config, environment_name, meshfile,
             
                 vis.poll_events()
                 vis.update_renderer()
-                vis.capture_screen_image("./images/" + str(i).zfill(5) + ".png")
+                vis.capture_screen_image(qs_path + "/images/" + str(i).zfill(5) + ".png")
                 vis.destroy_window()
 
         Twb = explorer.get_next_sensing_action(Twb)
@@ -99,11 +101,11 @@ def test_exploration(config, environment_name, meshfile,
     return occupied + free
 
 if __name__ == "__main__":
-    random_score = test_exploration("../config/exploration.yaml", "environment1", "../mesh/environment1.ply",
+    random_score = test_exploration(qs_path + "/config/exploration.yaml", "environment1", qs_path + "/mesh/environment1.ply",
                                     exploration_type="random", visualize=True, save=False)
-    greedy_score = test_exploration("../config/exploration.yaml", "environment1", "../mesh/environment1.ply",
+    greedy_score = test_exploration(qs_path + "/config/exploration.yaml", "environment1", qs_path + "/mesh/environment1.ply",
                                     exploration_type="greedy", visualize=True, save=False)
-    student_score = test_exploration("../config/exploration.yaml", "environment1", "../mesh/environment1.ply",
+    student_score = test_exploration(qs_path + "/config/exploration.yaml", "environment1", qs_path + "/mesh/environment1.ply",
                                     exploration_type="student", visualize=True, save=False)
 
     print('Random score: ' + str(random_score))
