@@ -26,13 +26,15 @@ If the cloning still does not work, use
 git clone https://github.com/mr-cmu/assignment4-handout.git
 ```
 
-Copy the `sensor_simulator`, `map_tools`, and `utils` directories from
+Copy the `sensor_simulator`, `map_tools`, `visualizer` and `utils` directories from
 assignments 0 and 2 into `quadrotor_simulator_py`. This assignment
 will refer to some of the classes defined in the prior homework
 assignment.
 ```
-cp -r /path/to/assignment0-handout/quadrotor_simulator_py/util assignment4-handout/quadrotor_simulator_py/
-cp -r /path/to/assignment2-handout/quadrotor_simulator_py/util assignment4-handout/quadrotor_simulator_py/
+cp -r /path/to/assignment0-handout/quadrotor_simulator_py/utils assignment4-handout/quadrotor_simulator_py/
+cp -r /path/to/assignment2-handout/quadrotor_simulator_py/visualizer assignment4-handout/quadrotor_simulator_py/
+cp -r /path/to/assignment2-handout/quadrotor_simulator_py/map_tools assignment4-handout/quadrotor_simulator_py/
+cp -r /path/to/assignment2-handout/quadrotor_simulator_py/sensor_simulator assignment4-handout/quadrotor_simulator_py/
 ```
 
 Next, you can either use the python environment you used for
